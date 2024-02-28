@@ -1,14 +1,9 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "StageManagerBase.h"
-
 #include "Filters/SBasicFilterBar.h"
 
 AStageManagerBase::AStageManagerBase()
 {
 	PrimaryActorTick.bCanEverTick = true;
-
 }
 
 void AStageManagerBase::BeginPlay()
@@ -23,7 +18,7 @@ void AStageManagerBase::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 	if (!IsWorking) return;
 	Timer += GetWorld()->GetDeltaSeconds();
-	auto kv = FilteredStageSequenceData->begin();
+	const auto kv = FilteredStageSequenceData->begin();
 	
 	if (Timer > kv.Value().TimeSecond) {
 		UE_LOG(LogTemp, Display, TEXT("Spawn at %f"), kv.Value().TimeSecond);

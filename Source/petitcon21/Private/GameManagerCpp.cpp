@@ -41,6 +41,5 @@ void AGameManagerCpp::BeginPlay()
 void AGameManagerCpp::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
 }
 

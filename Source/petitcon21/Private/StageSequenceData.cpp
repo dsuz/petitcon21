@@ -1,11 +1,10 @@
 #include "StageSequenceData.h"
-
 #include "IPropertyTable.h"
 #if WITH_EDITOR
-#include "Misc/MessageDialog.h"
-#include "UObject/Package.h"
-#include "EditorReimportHandler.h"
-#include "FileHelpers.h"
+	#include "Misc/MessageDialog.h"
+	#include "UObject/Package.h"
+	#include "EditorReimportHandler.h"
+	#include "FileHelpers.h"
 #endif
 
 #define LOCTEXT_NAMESPACE "TEST"
@@ -13,30 +12,29 @@
 void UStageSequenceDataAsset::Build()
 {
 #if WITH_EDITORONLY_DATA
-
 	// データテーブルの設定チェック
-	if( DataTable == nullptr )
+	if(DataTable == nullptr)
 	{
-		const FText TitleText = LOCTEXT( "Title", "WarningMassege" );
-		FMessageDialog::Open(EAppMsgType::Ok, LOCTEXT( "Message", "DataTable is Null !!" ), &TitleText );
+		const FText TitleText = LOCTEXT("Title", "WarningMassege");
+		FMessageDialog::Open(EAppMsgType::Ok, LOCTEXT("Message", "DataTable is Null !!"), &TitleText);
 		return;
 	}
 
 	// データテーブルの型チェック
-	if( !DataTable->GetRowStruct()->IsChildOf( FStageSequenceData_TableRow::StaticStruct() ) )
+	if( !DataTable->GetRowStruct()->IsChildOf(FStageSequenceData_TableRow::StaticStruct()))
 	{
-		const FText TitleText = LOCTEXT( "Title", "WarningMassege" );
-		FMessageDialog::Open( EAppMsgType::Ok, LOCTEXT( "Message", "DataTable type does not match !!" ), &TitleText );
+		const FText TitleText = LOCTEXT("Title", "WarningMassege");
+		FMessageDialog::Open(EAppMsgType::Ok, LOCTEXT("Message", "DataTable type does not match !!"), &TitleText);
 		return;
 	}
 
 	TArray<UPackage*> PackagesToSave;
 
 	// データテーブルをリインポート
-	if( FReimportManager::Instance()->Reimport( DataTable, false, true ) )
+	if( FReimportManager::Instance()->Reimport(DataTable, false, true))
 	{
 		// リインポートに成功したデータテーブルを保存対象に追加
-		PackagesToSave.Add( DataTable->GetOutermost() );
+		PackagesToSave.Add(DataTable->GetOutermost());
 	}
 
 	StageSequenceMap.Empty();
@@ -66,12 +64,12 @@ void UStageSequenceDataAsset::Build()
 	MarkPackageDirty();
 
 	// データアセットを保存対象に追加
-	PackagesToSave.Add( GetOutermost() );
+	PackagesToSave.Add(GetOutermost());
 
 	// 関連アセットを全て保存（SourceControl使用時はチェックアウトするかメッセージウィンドウを出す）
 	// ファイル編集フラグ（Dirty)が付いてるもののみを保存対象にしたいので第一引数はtrue
 	// 保存する際に確認のメッセージウィンドウを出さない場合は第二引数をfalseにする
-	FEditorFileUtils::PromptForCheckoutAndSave( PackagesToSave, true, true );
+	FEditorFileUtils::PromptForCheckoutAndSave(PackagesToSave, true, true);
 
 #endif
 }

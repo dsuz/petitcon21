@@ -1,5 +1,4 @@
 #pragma once
-
 #include "CoreMinimal.h"
 #include "Engine/DataAsset.h"
 #include "Engine/DataTable.h"
@@ -50,11 +49,11 @@ class PETITCON21_API UStageSequenceDataAsset : public UDataAsset
 
 public:
 #if WITH_EDITORONLY_DATA
-	UPROPERTY( BlueprintReadOnly, EditAnywhere )
+	UPROPERTY(BlueprintReadOnly, EditAnywhere)
 	class UDataTable* DataTable;
 #endif
 
-	UPROPERTY( BlueprintReadOnly, VisibleAnywhere )
+	UPROPERTY(BlueprintReadOnly, VisibleAnywhere)
 	TMap<int, FStageSequenceData> StageSequenceMap;
 	
 public:
