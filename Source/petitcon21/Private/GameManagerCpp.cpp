@@ -22,8 +22,9 @@ void AGameManagerCpp::ChangeStatus(const EGameState NewState)
 	// enum -> string
 	const auto StateStringLast = UEnum::GetValueAsString(this->LastState);
 	const auto StateStringCurrent = UEnum::GetValueAsString(this->State);
-	const auto Message = FString(TEXT("State changed to ")) + StateStringCurrent + FString(TEXT(" from ")) + StateStringLast;
-	UKismetSystemLibrary::PrintString(this, Message);
+	//const auto Message = FString(TEXT("State changed to ")) + StateStringCurrent + FString(TEXT(" from ")) + StateStringLast;
+	//UKismetSystemLibrary::PrintString(this, Message);
+	UE_LOG(LogTemp, Display, TEXT("State changed from %s to %s"), *StateStringLast, *StateStringCurrent);
 }
 
 EGameState AGameManagerCpp::GetStatus()
