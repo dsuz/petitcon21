@@ -2,7 +2,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "Public/EGameState.h"
+#include "EGameState.h"
 #include "GameManagerCpp.generated.h"
 
 UCLASS()
