@@ -1,5 +1,4 @@
 #include "StageManagerBase.h"
-#include "Filters/SBasicFilterBar.h"
 
 AStageManagerBase::AStageManagerBase()
 {

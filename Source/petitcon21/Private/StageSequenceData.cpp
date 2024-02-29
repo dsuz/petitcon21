@@ -1,5 +1,4 @@
 #include "StageSequenceData.h"
-#include "IPropertyTable.h"
 #if WITH_EDITOR
 	#include "Misc/MessageDialog.h"
 	#include "UObject/Package.h"
