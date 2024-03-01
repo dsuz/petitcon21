@@ -18,6 +18,8 @@ struct FStageSequenceData_TableRow : public FTableRowBase
 	UPROPERTY(EditAnywhere)
 	FVector SpawnLocation;
 	UPROPERTY(EditAnywhere)
+	FRotator SpawnRotation;
+	UPROPERTY(EditAnywhere)
 	FVector ShootDirection;
 	UPROPERTY(EditAnywhere)
 	float ShootSpeed;
@@ -36,6 +38,8 @@ struct FStageSequenceData
 	//E_TargetType TargetType;
 	UPROPERTY(BlueprintReadOnly, EditAnywhere)
 	FVector SpawnLocation;
+	UPROPERTY(BlueprintReadOnly, EditAnywhere)
+	FRotator SpawnRotation;
 	UPROPERTY(BlueprintReadOnly, EditAnywhere)
 	FVector ShootDirection;
 	UPROPERTY(BlueprintReadOnly, EditAnywhere)

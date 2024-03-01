@@ -52,6 +52,7 @@ void UStageSequenceDataAsset::Build()
 		StageSequenceData.StageNumber = TableRow->StageNumber;
 		StageSequenceData.TimeSecond = TableRow->TimeSecond;
 		StageSequenceData.SpawnLocation = TableRow->SpawnLocation;
+		StageSequenceData.SpawnRotation = TableRow->SpawnRotation;
 		StageSequenceData.ShootDirection = TableRow->ShootDirection;
 		StageSequenceData.ShootSpeed = TableRow->ShootSpeed;
 

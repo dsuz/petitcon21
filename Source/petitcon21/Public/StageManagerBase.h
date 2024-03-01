@@ -14,7 +14,7 @@ public:
 	FSoftObjectPath StageSequenceDataAssetPath;
 
 	UPROPERTY(EditAnywhere)
-	FSoftObjectPath TargetPath;
+	TSubclassOf<AActor> Target;
 
 private:
 	UPROPERTY()
@@ -22,8 +22,9 @@ private:
 
 	float Timer = 0;
 	bool IsWorking = false;
+	// そのステージのターゲット出力シーケンス
 	TSharedPtr<TMap<int, FStageSequenceData>> FilteredStageSequenceData;
-
+	
 protected:
 	virtual void BeginPlay() override;
 

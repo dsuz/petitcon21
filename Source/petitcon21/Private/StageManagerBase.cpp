@@ -20,12 +20,13 @@ void AStageManagerBase::Tick(float DeltaTime)
 	const auto kv = FilteredStageSequenceData->begin();
 	
 	if (Timer > kv.Value().TimeSecond) {
-		UE_LOG(LogTemp, Display, TEXT("Spawn at %f"), kv.Value().TimeSecond);
+		UE_LOG(LogTemp, Display, TEXT("Spawn: %f, %s, %s"), kv.Value().TimeSecond, *kv.Value().SpawnLocation.ToCompactString(), *kv.Value().SpawnRotation.ToCompactString());
+		auto Actor = GetWorld()->SpawnActor<AActor>(Target, kv.Value().SpawnLocation, kv.Value().SpawnRotation);
 		FilteredStageSequenceData->Remove(kv.Key());
 
 		if (FilteredStageSequenceData->Num() == 0) {
 			IsWorking = false;
-			UE_LOG(LogTemp, Display, TEXT("Done"));
+			UE_LOG(LogTemp, Display, TEXT("Stage sequence finished."));
 		}
 	}
 }
