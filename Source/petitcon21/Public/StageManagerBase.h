@@ -15,8 +15,7 @@ public:
 	FSoftObjectPath StageSequenceDataAssetPath;
 
 	UPROPERTY(EditAnywhere)
-	//TSubclassOf<AActor> Target;
-	TSubclassOf<AATargetBase> Target;
+	TArray<TSubclassOf<AATargetBase>> TargetList;
 
 private:
 	UPROPERTY()

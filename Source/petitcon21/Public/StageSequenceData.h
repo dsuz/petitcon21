@@ -13,8 +13,8 @@ struct FStageSequenceData_TableRow : public FTableRowBase
 	int StageNumber;
 	UPROPERTY(EditAnywhere)
 	float TimeSecond;
-	//UPROPERTY(EditAnywhere)
-	//E_TargetType TargetType;
+	UPROPERTY(EditAnywhere)
+	int TargetIndex;
 	UPROPERTY(EditAnywhere)
 	FVector SpawnLocation;
 	UPROPERTY(EditAnywhere)
@@ -34,8 +34,8 @@ struct FStageSequenceData
 	int StageNumber;
 	UPROPERTY(BlueprintReadOnly, EditAnywhere)
 	float TimeSecond;
-	//UPROPERTY(EditAnywhere)
-	//E_TargetType TargetType;
+	UPROPERTY(EditAnywhere)
+	int TargetIndex;
 	UPROPERTY(BlueprintReadOnly, EditAnywhere)
 	FVector SpawnLocation;
 	UPROPERTY(BlueprintReadOnly, EditAnywhere)
