@@ -21,7 +21,12 @@ void AStageManagerBase::Tick(float DeltaTime)
 	
 	if (Timer > kv.Value().TimeSecond) {
 		UE_LOG(LogTemp, Display, TEXT("Spawn: %f, %s, %s"), kv.Value().TimeSecond, *kv.Value().SpawnLocation.ToCompactString(), *kv.Value().SpawnRotation.ToCompactString());
-		auto Actor = GetWorld()->SpawnActor<AActor>(Target, kv.Value().SpawnLocation, kv.Value().SpawnRotation);
+		const auto SpawnTarget = GetWorld()->SpawnActor<AATargetBase>(Target, kv.Value().SpawnLocation, kv.Value().SpawnRotation);
+		auto ShootVelocity = kv.Value().ShootDirection;
+		ShootVelocity.Normalize();
+		ShootVelocity *= kv.Value().ShootSpeed;
+		SpawnTarget->SetVelocity(ShootVelocity);
+		UE_LOG(LogTemp, Display, TEXT("Shoot: %s"), *ShootVelocity.ToCompactString());
 		FilteredStageSequenceData->Remove(kv.Key());
 
 		if (FilteredStageSequenceData->Num() == 0) {

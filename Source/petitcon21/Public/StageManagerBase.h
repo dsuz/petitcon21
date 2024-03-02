@@ -2,6 +2,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "StageSequenceData.h"
+#include "ATargetBase.h"
 #include "StageManagerBase.generated.h"
 
 UCLASS(config = Game, defaultconfig)
@@ -14,7 +15,8 @@ public:
 	FSoftObjectPath StageSequenceDataAssetPath;
 
 	UPROPERTY(EditAnywhere)
-	TSubclassOf<AActor> Target;
+	//TSubclassOf<AActor> Target;
+	TSubclassOf<AATargetBase> Target;
 
 private:
 	UPROPERTY()
