@@ -22,6 +22,9 @@ public:
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FGameStartDelegate);	// ゲームスタート
 	UPROPERTY(BlueprintAssignable)
 	FGameStartDelegate OnGameStart;
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FGameOverDelegate);	// ゲームオーバー
+	UPROPERTY(BlueprintAssignable)
+	FGameOverDelegate OnGameOver;
 
 protected:
 	virtual void BeginPlay() override;

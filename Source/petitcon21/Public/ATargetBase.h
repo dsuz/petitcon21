@@ -22,6 +22,9 @@ public:
 	
 	UPROPERTY(EditAnywhere)
 	float Speed = 200.0;
+
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
+	int Damage = 5;
 	
 public:	
 	AATargetBase();

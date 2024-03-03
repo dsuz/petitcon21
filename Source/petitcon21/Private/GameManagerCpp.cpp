@@ -17,6 +17,8 @@ void AGameManagerCpp::ChangeStatus(const EGameState NewState)
 	} else if (this->State == EGameState::InGame) {
 		// ゲーム開始
 		OnGameStart.Broadcast();
+	} else if (this->State == EGameState::GameOver) {
+		OnGameOver.Broadcast();
 	}
 
 	// enum -> string
