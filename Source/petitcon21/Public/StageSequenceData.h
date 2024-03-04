@@ -23,6 +23,8 @@ struct FStageSequenceData_TableRow : public FTableRowBase
 	FVector ShootDirection;
 	UPROPERTY(EditAnywhere)
 	float ShootSpeed;
+	UPROPERTY(EditAnywhere)
+	FString Comment;
 };
 
 USTRUCT(BlueprintType)

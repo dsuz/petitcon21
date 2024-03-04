@@ -17,6 +17,13 @@ public:
 	UPROPERTY(EditAnywhere)
 	TArray<TSubclassOf<AATargetBase>> TargetList;
 
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FTargetGenerationCompleteDelegate);	// ターゲットの生成を終了した時に呼ぶ
+	UPROPERTY(BlueprintAssignable)
+	FTargetGenerationCompleteDelegate OnTargetGenerationComplete;
+
+	UPROPERTY(BlueprintReadOnly)
+	int LastStageNumber = 0;
+	
 private:
 	UPROPERTY()
 	TSoftObjectPtr<class UStageSequenceDataAsset> StageSequenceData;

@@ -10,6 +10,14 @@ void AStageManagerBase::BeginPlay()
 	Super::BeginPlay();
 	StageSequenceData = Cast<UStageSequenceDataAsset>(StaticLoadObject(UStageSequenceDataAsset::StaticClass(), nullptr, *StageSequenceDataAssetPath.ToString()));
 	FilteredStageSequenceData = MakeShared<TMap<int, FStageSequenceData>>();
+	// 最終ステージの番号を取得する
+	for (auto& kv : StageSequenceData->StageSequenceMap) {
+		if (kv.Value.StageNumber > LastStageNumber) {
+			LastStageNumber = kv.Value.StageNumber;
+		}
+	}
+
+	UE_LOG(LogTemp, Display, TEXT("Last Stage Number: %d"), LastStageNumber);
 }
 
 void AStageManagerBase::Tick(float DeltaTime)
@@ -17,6 +25,13 @@ void AStageManagerBase::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 	if (!IsWorking) return;
 	Timer += GetWorld()->GetDeltaSeconds();
+	
+	if (FilteredStageSequenceData->Num() == 0) {
+		UE_LOG(LogTemp, Display, TEXT("Warning: No stage data. Exit..."));
+		IsWorking = false;
+		return;
+	}
+	
 	const auto kv = FilteredStageSequenceData->begin();
 	
 	if (Timer > kv.Value().TimeSecond) {
@@ -32,6 +47,7 @@ void AStageManagerBase::Tick(float DeltaTime)
 		if (FilteredStageSequenceData->Num() == 0) {
 			IsWorking = false;
 			UE_LOG(LogTemp, Display, TEXT("Stage sequence finished."));
+			OnTargetGenerationComplete.Broadcast();
 		}
 	}
 }
