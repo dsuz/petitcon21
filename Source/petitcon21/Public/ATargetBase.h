@@ -2,7 +2,6 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-//#include "Components/CapsuleComponent.h"
 #include "ATargetBase.generated.h"
 
 UCLASS()
@@ -14,15 +13,9 @@ public:
 	UPROPERTY(EditAnywhere)
 	TObjectPtr<USceneComponent> DefaultSceneRoot;
 
-	//UPROPERTY(EditAnywhere)
-	//TObjectPtr<UCapsuleComponent> Capsule;
-
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	TObjectPtr<UStaticMeshComponent> StaticMesh;
 	
-	UPROPERTY(EditAnywhere)
-	float Speed = 200.0;
-
 	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
 	int Damage = 5;
 	
@@ -35,4 +28,8 @@ protected:
 public:	
 	virtual void Tick(float DeltaTime) override;
 	void SetVelocity(const FVector& Velocity) const;
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
+	void Attacked();
+	UFUNCTION(BlueprintNativeEvent)
+	void Withdraw();
 };

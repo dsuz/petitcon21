@@ -1,12 +1,9 @@
 #include "ATargetBase.h"
-//#include "Components/CapsuleComponent.h"
 
 AATargetBase::AATargetBase()
 {
 	DefaultSceneRoot = CreateDefaultSubobject<USceneComponent>(TEXT("SceneComponent"));
 	RootComponent = DefaultSceneRoot;
-	//Capsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("UCapsuleComponent"));
-	//Capsule->SetupAttachment(RootComponent);
 	StaticMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("StaticMeshComponent"));
 	UStaticMesh* Mesh = LoadObject<UStaticMesh>(nullptr, TEXT("/Engine/VREditor/TransformGizmo/TranslateArrowHandle.TranslateArrowHandle"), nullptr, LOAD_None, nullptr);
 	StaticMesh->SetStaticMesh(Mesh);
@@ -31,9 +28,10 @@ void AATargetBase::SetVelocity(const FVector& Velocity) const
 	StaticMesh->SetPhysicsLinearVelocity(Velocity);
 }
 
-// void AATargetBase::SetVelocity(const FVector& Force) const
-// {
-// 	//StaticMesh->AddForce(Force);
-// 	StaticMesh->SetPhysicsLinearVelocity(Force);
-// }
+void AATargetBase::Attacked_Implementation()
+{
+}
 
+void AATargetBase::Withdraw_Implementation()
+{
+}
