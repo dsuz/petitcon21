@@ -1,5 +1,4 @@
 #include "GameManagerCpp.h"
-#include "Kismet/KismetSystemLibrary.h"
 
 AGameManagerCpp::AGameManagerCpp()
 {
@@ -24,14 +23,25 @@ void AGameManagerCpp::ChangeStatus(const EGameState NewState)
 	// enum -> string
 	const auto StateStringLast = UEnum::GetValueAsString(this->LastState);
 	const auto StateStringCurrent = UEnum::GetValueAsString(this->State);
-	//const auto Message = FString(TEXT("State changed to ")) + StateStringCurrent + FString(TEXT(" from ")) + StateStringLast;
-	//UKismetSystemLibrary::PrintString(this, Message);
 	UE_LOG(LogTemp, Display, TEXT("State changed from %s to %s"), *StateStringLast, *StateStringCurrent);
 }
 
 EGameState AGameManagerCpp::GetStatus()
 {
 	return this->State;
+}
+
+int AGameManagerCpp::AddScore(const int Score_Adding)
+{
+	this->Score += Score_Adding;
+	UE_LOG(LogTemp, Display, TEXT("Add Score: %d, Total Score: %d"), Score_Adding, Score);
+	OnChangeScore.Broadcast();
+	return this->Score;
+}
+
+int AGameManagerCpp::GetScore()
+{
+	return Score;
 }
 
 void AGameManagerCpp::BeginPlay()

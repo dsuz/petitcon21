@@ -25,6 +25,13 @@ public:
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FGameOverDelegate);	// ゲームオーバー
 	UPROPERTY(BlueprintAssignable)
 	FGameOverDelegate OnGameOver;
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FChangeScoreDelegate);	// 得点の変動
+	UPROPERTY(BlueprintAssignable)
+	FChangeScoreDelegate OnChangeScore;
+	UFUNCTION(BlueprintCallable)
+	int AddScore(const int Score_Adding);
+	UFUNCTION(BlueprintCallable)
+	int GetScore();
 
 protected:
 	virtual void BeginPlay() override;
@@ -33,4 +40,5 @@ private:
 	EGameState State = EGameState::None;
 	EGameState LastState = EGameState::None;
 	int Level = 1;
+	int Score = 0;
 };

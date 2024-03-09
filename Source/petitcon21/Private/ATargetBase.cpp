@@ -32,6 +32,3 @@ void AATargetBase::Attacked_Implementation()
 {
 }
 
-void AATargetBase::Withdraw_Implementation()
-{
-}

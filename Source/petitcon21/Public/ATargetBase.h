@@ -18,6 +18,9 @@ public:
 	
 	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
 	int Damage = 5;
+
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
+	int Score = 100;
 	
 public:	
 	AATargetBase();
@@ -30,6 +33,4 @@ public:
 	void SetVelocity(const FVector& Velocity) const;
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
 	void Attacked();
-	UFUNCTION(BlueprintNativeEvent)
-	void Withdraw();
 };
