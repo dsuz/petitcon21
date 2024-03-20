@@ -25,6 +25,9 @@ public:
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FGameOverDelegate);	// ゲームオーバー
 	UPROPERTY(BlueprintAssignable)
 	FGameOverDelegate OnGameOver;
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FStageClearDelegate);	// ステージクリア
+    UPROPERTY(BlueprintAssignable)
+    FStageClearDelegate OnClearStage;
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FChangeScoreDelegate);	// 得点の変動
 	UPROPERTY(BlueprintAssignable)
 	FChangeScoreDelegate OnChangeScore;

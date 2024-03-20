@@ -10,14 +10,14 @@ void AGameManagerCpp::ChangeStatus(const EGameState NewState)
 	this->LastState = this->State;
 	this->State = NewState;
 
-	if (this->State == EGameState::Intro) {
-		// イントロ再生
+	if (this->State == EGameState::Intro) {	// イントロ再生
 		OnIntroduction.Broadcast();
-	} else if (this->State == EGameState::InGame) {
-		// ゲーム開始
+	} else if (this->State == EGameState::InGame) {	// ゲーム開始
 		OnGameStart.Broadcast();
-	} else if (this->State == EGameState::GameOver) {
+	} else if (this->State == EGameState::GameOver) { // ゲームオーバー
 		OnGameOver.Broadcast();
+	} else if (this->State == EGameState::Clear) {	// ステージクリア
+		OnClearStage.Broadcast();
 	}
 
 	// enum -> string
