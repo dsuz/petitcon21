@@ -17,6 +17,11 @@ public:
 	UPROPERTY(EditAnywhere)
 	TArray<TSubclassOf<AATargetBase>> TargetList;
 
+	//DECLARE_MULTICAST_DELEGATE_OneParam(FNotifyTargetRemainsCountDelegate, void, const int);	// ターゲットを生成するたびに呼び、残りターゲット数を与える
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FNotifyTargetRemainsCountDelegate, int, TargetRemainsCount);	// ターゲットを生成するたびに呼び、残りターゲット数を与える
+	UPROPERTY(BlueprintAssignable)
+	FNotifyTargetRemainsCountDelegate OnTargetGeneration;
+	
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FTargetGenerationCompleteDelegate);	// ターゲットの生成を終了した時に呼ぶ
 	UPROPERTY(BlueprintAssignable)
 	FTargetGenerationCompleteDelegate OnTargetGenerationComplete;

@@ -43,8 +43,10 @@ void AStageManagerBase::Tick(float DeltaTime)
 		SpawnTarget->SetVelocity(ShootVelocity);
 		UE_LOG(LogTemp, Display, TEXT("Shoot: %s"), *ShootVelocity.ToCompactString());
 		FilteredStageSequenceData->Remove(kv.Key());
-
-		if (FilteredStageSequenceData->Num() == 0) {
+		const auto TargetRemainsCount = FilteredStageSequenceData->Num();
+		OnTargetGeneration.Broadcast(TargetRemainsCount);
+		
+		if (TargetRemainsCount == 0) {
 			IsWorking = false;
 			UE_LOG(LogTemp, Display, TEXT("Stage sequence finished."));
 			OnTargetGenerationComplete.Broadcast();
@@ -71,6 +73,9 @@ void AStageManagerBase::Start(const int StageNumber)
 	{
 		return A.TimeSecond < B.TimeSecond;
 	});
+
+	// 残りターゲット数を通知する
+	OnTargetGeneration.Broadcast(FilteredStageSequenceData->Num());
 }
 
 void AStageManagerBase::Pause()
