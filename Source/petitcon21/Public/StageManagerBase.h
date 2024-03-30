@@ -25,22 +25,16 @@ public:
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FTargetGenerationCompleteDelegate);	// ターゲットの生成を終了した時に呼ぶ
 	UPROPERTY(BlueprintAssignable)
 	FTargetGenerationCompleteDelegate OnTargetGenerationComplete;
-
-	UPROPERTY(BlueprintReadOnly)
-	int LastStageNumber = 0;
 	
 private:
 	UPROPERTY()
 	TSoftObjectPtr<class UStageSequenceDataAsset> StageSequenceData;
-
 	float Timer = 0;
 	bool IsWorking = false;
 	// そのステージのターゲット出力シーケンス
 	TSharedPtr<TMap<int, FStageSequenceData>> FilteredStageSequenceData;
+	int LastStageNumber = 0;
 	
-protected:
-	virtual void BeginPlay() override;
-
 public:
 	AStageManagerBase();
 	virtual void Tick(float DeltaTime) override;
@@ -50,4 +44,9 @@ public:
 	void Pause();
 	UFUNCTION(BlueprintCallable)
 	void Resume();
+	UFUNCTION(BlueprintCallable)
+	int GetLastStageNumber();
+
+private:
+	void LoadStageData();
 };
