@@ -22,17 +22,11 @@ void AATargetBase::BeginPlay()
 void AATargetBase::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	LifeTime += DeltaTime;
 }
 
 void AATargetBase::SetVelocity(const FVector& Velocity) const
 {
 	StaticMesh->SetPhysicsLinearVelocity(Velocity);
-}
-
-void AATargetBase::ResetLifeSpan(float SecondsFromNow)
-{
-	this->SetLifeSpan(LifeTime + SecondsFromNow);
 }
 
 void AATargetBase::Attacked_Implementation()

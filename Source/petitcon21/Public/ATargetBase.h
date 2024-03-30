@@ -34,11 +34,6 @@ protected:
 public:	
 	virtual void Tick(float DeltaTime) override;
 	void SetVelocity(const FVector& Velocity) const;
-	UFUNCTION(BlueprintCallable)
-	void ResetLifeSpan(float SecondsFromNow);	// 生存期間を設定しなおす。引数は「現在から何秒後に破棄するか」を指定する。
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
 	void Attacked();
-
-private:
-	float LifeTime = 0;	// アクタが spawn してから経過した秒数
 };
