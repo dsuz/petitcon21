@@ -5,7 +5,7 @@ Developed with Unreal Engine 5
 # 操作方法
 
 ## 基本操作
-
+キーボードのテンキーを使って操作します。テンキーがない場合は英字キーを使って操作することもできます。
 ![](https://github.com/dsuz/petitcon21/assets/4126881/2ac5db24-ca54-4263-a149-8eb95bd63a74)
 
 ## ゲーム（アプリケーション）の終了
