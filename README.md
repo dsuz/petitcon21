@@ -38,11 +38,11 @@ Alt + F4
 
 # 使用アセット等
 
-## モデル・スケルタル アニメーション
+## キャラクターモデル・スケルタル アニメーション
 
 - [mixamo](https://www.mixamo.com/)
 
-  - Kachujin G Rosales
+  - Kachujin G Rosales（キャラクター）
 
   - "Combat" ジャンルのアニメーション
 
