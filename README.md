@@ -28,3 +28,6 @@ Alt + F4
 - 起動直後のカットシーン再生中に Enter : カットシーンを飛ばしてタイトルに行く
 - ゲーム中に PageUp : BGM をオフにする
 - ゲーム中に PageDown : BGM をオンにする
+
+## 画面の情報
+![](https://github.com/dsuz/petitcon21/assets/4126881/1c2bd1a7-4cb0-47fe-b0f9-250c315b647d)
