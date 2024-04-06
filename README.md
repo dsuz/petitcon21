@@ -22,12 +22,12 @@ Alt + F4
 
 ![](https://github.com/dsuz/petitcon21/assets/4126881/db0adcca-fac2-4a7c-9d8a-5a86c4b0aa95)
 
-## 特殊操作
+## 画面の情報
+![](https://github.com/dsuz/petitcon21/assets/4126881/1c2bd1a7-4cb0-47fe-b0f9-250c315b647d)
+
+## 特殊な操作
 
 - 起動直後のカットシーン再生中に PageUp : カットシーンを最初から再生する
 - 起動直後のカットシーン再生中に Enter : カットシーンを飛ばしてタイトルに行く
 - ゲーム中に PageUp : BGM をオフにする
 - ゲーム中に PageDown : BGM をオンにする
-
-## 画面の情報
-![](https://github.com/dsuz/petitcon21/assets/4126881/1c2bd1a7-4cb0-47fe-b0f9-250c315b647d)
