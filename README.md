@@ -1,6 +1,6 @@
 # プロジェクトの説明
 
-[第21回UE5ぷちコン](https://historia.co.jp/ue5petitcon21)にエントリーした作品『息吹 -IBUKI-』のリポジトリです。
+[第21回UE5ぷちコン](https://historia.co.jp/ue5petitcon21)にエントリーした作品『息吹 -IBUKI-』のリポジトリです。リポジトリにはアセットなどは含まれていないので、クローンしただけでは動きません。
 
 - [動画](https://youtu.be/Pi9pSICUXjA)
 - [開発過程](https://www.youtube.com/playlist?list=PL8vIqAPw1MdFNa0LbeRqHDhqnG3gH4pla)
