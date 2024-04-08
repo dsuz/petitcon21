@@ -86,10 +86,3 @@ Alt + F4
 ## その他
 
 - [ボイスチェンジャー (iMyFone MagicMic)](https://youfulca.com/2022/08/07/game_narration/)
-
-## Control
-### Attack targets using numpad. 
-![Instruction1](https://github.com/dsuz/petitcon21/assets/4126881/56647edd-f89c-4701-9a4a-1a50db186390)
-### Alternatively you can use alphabet keys.
-![Instruction2](https://github.com/dsuz/petitcon21/assets/4126881/0ba06548-534b-4575-b578-2c836f2096b4)
-### Quit: Alt + F4
