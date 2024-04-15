@@ -10,7 +10,7 @@
 
 ## 基本操作
 キーボードのテンキーを使って操作します。テンキーがない場合は英字キーを使って操作することもできます。
-![](https://github.com/dsuz/petitcon21/assets/4126881/2ac5db24-ca54-4263-a149-8eb95bd63a74)
+![](https://github.com/dsuz/petitcon21/assets/4126881/558e7457-fea6-4e41-8e68-e9a854925d44)
 
 ## ゲーム（アプリケーション）の終了
 
