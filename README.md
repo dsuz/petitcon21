@@ -86,3 +86,17 @@ Alt + F4
 ## その他
 
 - [ボイスチェンジャー (iMyFone MagicMic)](https://youfulca.com/2022/08/07/game_narration/)
+
+# 使用ツール
+- Unreal Engine 5.3
+- Rider for Unreal Engine
+- Blender 3.6（シェイプキーの追加・モデルの修正等）
+- Cascadeur 2023.2（キャラクターアニメーション作成）
+- Excel（データ作成）
+- CSVイディー（CSV ファイル編集）
+- GitHub（プロジェクト管理）
+- GitHub Desktop
+- windbg（クラッシュダンプ解析）
+- Visual Studio 2022（インストーラー作成）
+- paint.net（アイコン作成）
+- PowerPoint（マニュアル作成）
