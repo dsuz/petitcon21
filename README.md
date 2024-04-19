@@ -97,7 +97,7 @@ Alt + F4
 - CSVイディー（CSV ファイル編集）
 - GitHub（プロジェクト管理）
 - GitHub Desktop
-- windbg（クラッシュダンプ解析）
+- windbg（クラッシュダンプ解析・デバッグ）
 - Visual Studio 2022（インストーラー作成）
 - paint.net（アイコン作成）
 - Davinci Resolve（動画作成）
