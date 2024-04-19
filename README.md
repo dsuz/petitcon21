@@ -92,6 +92,7 @@ Alt + F4
 - Rider for Unreal Engine
 - Blender 3.6（シェイプキーの追加・モデルの修正等）
 - Cascadeur 2023.2（キャラクターアニメーション作成）
+- Audacity（音声データ編集）
 - Excel（データ作成）
 - CSVイディー（CSV ファイル編集）
 - GitHub（プロジェクト管理）
@@ -99,4 +100,5 @@ Alt + F4
 - windbg（クラッシュダンプ解析）
 - Visual Studio 2022（インストーラー作成）
 - paint.net（アイコン作成）
+- Davinci Resolve（動画作成）
 - PowerPoint（マニュアル作成）
